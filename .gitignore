@@ -1,0 +1,4 @@
+crash.log
+.vagrant/
+packer_cache/
+*.box

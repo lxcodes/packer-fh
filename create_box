@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+#export PACKER_LOG=1
+rm fh-ubuntu-13.10.base.box || true
+packer build -only ubuntu-13.10 packer.json
+vagrant box remove fh/ubuntu-13.10.base || true
+vagrant box add fh/ubuntu-13.10.base fh-ubuntu-13.10.base.box
